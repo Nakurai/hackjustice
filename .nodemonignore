@@ -1,0 +1,7 @@
+/node_modules/*
+/public/*
+/views/*
+/.git/*
+/.gitignore
+/package.json
+/README.md
