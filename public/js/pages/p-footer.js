@@ -5,14 +5,11 @@ function pFooter() {
   // this.view = new vFooter();
   //this.view.load();
 
-  var footer = new Vue({
+  this.vm = new Vue({
     el:'#footer',
-    template:'<div class="w3-center" style="border-top: 1px solid #3e3ec1">\
-            <p>\
-            website by <a href="mailto:whatisyourmission@creatite.online" title="technical dreamer">creatite</a>, 2017\
-            </p>\
-          </div>\
-          '
+    data:{
+
+    }
   });
 
   this.init();

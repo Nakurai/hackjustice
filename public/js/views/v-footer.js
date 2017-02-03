@@ -1,8 +1,8 @@
 "use strict;"
 
-function vHeader() {}
+function vFooter() {}
 
-vHeader.prototype = {
+vFooter.prototype = {
 
     /**
       change the HTML elements of the page
@@ -15,8 +15,11 @@ vHeader.prototype = {
       returns the html content of the page itself
     */
     html: function(){
-      return '<div>\
-      </div>';
+      return '<div class="w3-center" style="border-top: 1px solid #3e3ec1">\
+              <p>\
+                an awesome project\
+              </p>\
+            </div>';
     }
 
 

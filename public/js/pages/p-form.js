@@ -1,8 +1,8 @@
 "use strict;"
 
-function pHome() {
+function pForm() {
   // then, loading of the view displayed to the user
-  this.view = new vHome();
+  this.view = new vForm();
   this.view.load();
 
   this.vm = new Vue({
@@ -20,7 +20,7 @@ function pHome() {
 
 }
 
-pHome.prototype = {
+vForm.prototype = {
 
   /**
   */

@@ -26,7 +26,7 @@ function App(route) {
     that.initApp()
     .done(function(){
       this.header = new pHeader();
-      this.footer = new pFooter();
+      //this.footer = new pFooter();
       that.route(that.currentPage, route.param);
     })
     .fail(function(err){
@@ -64,7 +64,7 @@ App.prototype = {
 
       d.resolve();
     } catch (e) {
-      apptools.log.err(e.message);
+      log.err(e.message);
       d.reject();
     }
 
@@ -99,7 +99,10 @@ App.prototype = {
 
       switch(path || '/') {
         case 'home':
-            this.page = new pHome(param);
+            this.page = new pHome();
+            break;
+        case 'form':
+            this.page = new pForm();
             break;
         default:
             this.page = new pHome();

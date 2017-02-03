@@ -1,14 +1,14 @@
 "use strict;"
 
-function vHeader() {}
+function vForm() {}
 
-vHeader.prototype = {
+vForm.prototype = {
 
     /**
       change the HTML elements of the page
     */
     load: function(){
-      $('#header').html(this.html());
+      $('#content').html(this.html());
     },
 
     /**
