@@ -57,6 +57,51 @@ app.get('/', function(req, res) {
   res.render('home', {route:null});
 });
 
+app.get('/form', function(req, res) {
+  res.render('home', {route:'form'});
+});
+
+app.get('/options', function(req, res) {
+  res.render('home', {route:'options'});
+});
+
+/*****************************
+ API
+*****************************/
+
+app.post('/api/user/situation', function(req, res) {
+
+  myApp.userSituation(req.body.user)
+  .then(function(validOptionCodes) {
+    res.json({'ok':true, 'data':validOptionCodes});
+  }).catch(function (err) {
+    res.json({'ok':false, 'err':err});
+  });
+
+});
+
+app.get('/api/options', function(req, res) {
+
+  myApp.optionsGet(null)
+  .then(function(optionsList) {
+    res.json({'ok':true, 'data':optionsList});
+  }).catch(function (err) {
+    res.json({'ok':false, 'err':err});
+  });
+
+});
+
+app.get('/api/options/:code', function(req, res) {
+
+  myApp.optionsGet(req.params.code)
+  .then(function(optionsList) {
+    res.json({'ok':true, 'data':optionsList});
+  }).catch(function (err) {
+    res.json({'ok':false, 'err':err});
+  });
+
+});
+
 
 
 

@@ -3,7 +3,8 @@ var config = require('./config'),
 mongoose = require('mongoose'),
 db = mongoose.connection,
 initdb = require('./utils/initdb').db,
-user = require('./api/user/post').post;
+user = require('./api/user/post').post,
+options = require('./api/options/get').get;
 //mail = require('./utils/mail').mail;
 
 class App{
@@ -32,6 +33,14 @@ class App{
           */
         });
 
+    }
+
+    userSituation(information){
+      return user.situation(information);
+    }
+
+    optionsGet(code){
+      return options.options(code);
     }
 
 

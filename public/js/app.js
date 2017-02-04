@@ -57,8 +57,8 @@ App.prototype = {
       // if param is a string, then it is the destination
       $('body').on('myapp.goto', function(event, param){
         if(param.destination){
-          //console.log('got to '+param.destination);
-          that.route(param.destination);
+          //console.log('go to '+param.destination);
+          that.route(param.destination, param.param);
         }
       });
 
@@ -103,6 +103,9 @@ App.prototype = {
             break;
         case 'form':
             this.page = new pForm();
+            break;
+        case 'options':
+            this.page = new pOptions(param);
             break;
         default:
             this.page = new pHome();
