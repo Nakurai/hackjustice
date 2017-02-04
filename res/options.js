@@ -4,7 +4,17 @@ options['trial'] =
     code:'trial',
     name:'Trial',
     cost:232000,
-    duration:'around three years'
+    duration:'around three years',
+    lawyers:[
+      {
+      code:'',
+      name:'',
+      address:'',
+      phone:'',
+      pictureURL:''
+      }
+    ]
+
   };
 options['mediation'] =
   {
