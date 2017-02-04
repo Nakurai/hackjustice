@@ -23,10 +23,10 @@ function vHome() {}
                   <p class="w3-container w3-border w3-padding w3-round">\
                     ioerjgoerj rpgojeùkgp elgj epglg pegrepgkĝ p jepùgojekgrrj eùg e\
                   </p>\
-                </div>\
-                <p class="w3-center">\
-                  <span class="w3-btn w3-theme"> BEGIN </span>\
+                  <p class="w3-center">\
+                    <a class="w3-btn w3-theme" href="/form"> BEGIN </a>\
                   </p>\
+                </div>\
                   \
                   \
                 <div id="alertAbuseModal" v-if="showAlertAbuse" class="w3-modal">\

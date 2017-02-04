@@ -14,7 +14,8 @@ function pOptions(optionCodes) {
     el:'#content',
     data:{
       generalContent:true,
-      options:[]
+      options:[],
+      currentOptionDisplayed:''
     },
     created:function(){
       var path = 'options',

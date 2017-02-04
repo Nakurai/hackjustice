@@ -22,23 +22,38 @@ vOptions.prototype = {
       <div v-if="!generalContent"> \
         Given your answers, you will find below the possible options for handling your separation.\
       </div> \
-      <div v-for="option in options" class="w3-card-2"> \
+      \
+      \
+      <ul class="w3-ul">\
+      <li v-for="option in options" class="w3-border w3-margin-bottom"> \
         <header> <h3> {{option.name}} </h3> </header>\
         <div class="w3-container">\
-        <div class="w3-row">\
-          <div class="w3-col w3-half">\
-           <p title="estimated cost"> <i class="fa fa-money w3-xlarge w3-margin-bottom w3-text-green" aria-hidden="true"> </i><br>\
-           {{option.cost}} CAD\
-           </p>\
+          <div class="w3-margin-bottom">\
+            <i class="fa fa-hand-o-right w3-margin-right"></i> {{option.description}}\
           </div>\
-          <div class="w3-col w3-half">\
-          <p title="estimated duration"> <i class="fa fa-calendar w3-large w3-margin-bottom" aria-hidden="true"> </i><br>\
-            {{option.duration}}\
-          </p>\
+          <div v-on:click="currentOptionDisplayed=option.code" class="link-like w3-text-theme" style="border-top: 1px solid #26364a;">\
+            See more information &darr;\
+          </div>\
+          <div v-if="currentOptionDisplayed === option.code" class="">\
+              <div class="w3-row">\
+                <div class="w3-col w3-half">\
+                 <p title="estimated cost"> <i class="fa fa-money w3-xlarge w3-margin-bottom w3-text-green" aria-hidden="true"> </i><br>\
+                 {{option.cost}} CAD\
+                 </p>\
+                </div>\
+                <div class="w3-col w3-half">\
+                <p title="estimated duration"> <i class="fa fa-calendar w3-large w3-margin-bottom" aria-hidden="true"> </i><br>\
+                  {{option.duration}}\
+                </p>\
+                </div>\
+              </div> <!-- end of the two half width icons-->\
+              <div>\
+                  tetset\
+              </div>\
           </div>\
         </div>\
-        </div>\
-      </div>\
+      </li>\
+      </ul>\
       </div>';
     }
 
