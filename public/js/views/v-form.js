@@ -17,12 +17,17 @@ vForm.prototype = {
     html: function(){
       return '<div>\
       <form class="w3-container" v-on:submit.prevent="sendUserInformation" style="width:60%;margin:auto;">\
-        <fieldset>\
+        <fieldset class="w3-card-2 w3-margin-top">\
         <legend>Annual Income (CAD)</legend>\
-          <input v-model="user.income" class="w3-input" type="number">\
+          <input v-model="user.income" class="w3-input" min="0" type="number">\
         </fieldset>\
         \
-        <fieldset>\
+        <fieldset class="w3-card-2 w3-margin-top">\
+        <legend>Number of children</legend>\
+          <input v-model="user.nbChildren" class="w3-input" min="0" type="number">\
+        </fieldset>\
+        \
+        <fieldset class="w3-card-2 w3-margin-top">\
         <legend>Marital status</legend>\
           <input type="radio" id="mStatusMarried" value="married" v-model="user.maritalStatus">\
           <label for="mStatusMarried">Married</label>\
@@ -35,7 +40,7 @@ vForm.prototype = {
           <br>\
         </fieldset>\
         \
-        <fieldset>\
+        <fieldset class="w3-card-2 w3-margin-top">\
         <legend>Issues in dispute</legend>\
           <input type="checkbox" id="issueDivorce" value="divorce" v-model="user.issues">\
           <label for="issueDivorce">Divorce</label>\
@@ -63,7 +68,7 @@ vForm.prototype = {
           <br>\
         </fieldset>\
         <p>\
-          <input type="submit" class="w3-btn" value="Send information">\
+          <input type="submit" class="w3-btn w3-theme" value="Submit">\
         </p>\
       </form>\
       </div>';

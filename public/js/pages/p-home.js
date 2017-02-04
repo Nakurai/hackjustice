@@ -8,7 +8,7 @@ function pHome() {
   this.vm = new Vue({
     el:'#content',
     data:{
-
+      showAlertAbuse:true
     }
   });
 
@@ -26,6 +26,7 @@ pHome.prototype = {
   */
   init: function(){
     var that = this;
+    document.getElementById('alertAbuseModal').style.display='block';
   }
 
 };

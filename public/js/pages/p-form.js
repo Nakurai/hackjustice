@@ -11,7 +11,8 @@ function pForm() {
       user:{
         income:0,
         maritalStatus:'',
-        issues:[]
+        issues:[],
+        nbChildren:0
       }
     },
     methods:{

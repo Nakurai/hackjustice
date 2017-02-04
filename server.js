@@ -56,6 +56,10 @@ console.log('will listen on port '+port);
 app.get('/', function(req, res) {
   res.render('home', {route:null});
 });
+// home page
+app.get('/home', function(req, res) {
+  res.render('home', {route:'home'});
+});
 
 app.get('/form', function(req, res) {
   res.render('home', {route:'form'});
