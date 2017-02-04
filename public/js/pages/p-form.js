@@ -8,7 +8,27 @@ function pForm() {
   this.vm = new Vue({
     el:'#content',
     data:{
-
+      user:{
+        income:0,
+        maritalStatus:'',
+        issues:[]
+      }
+    },
+    methods:{
+      sendUserInformation:function(){
+        if(this.user.maritalStatus !== '' && this.user.issues !== []){
+          api.post('user/situation', {'user':this.user})
+          .done(function(validOptions){
+            $('body').trigger('myapp.goto', {destination:'options', param:validOptions})
+          })
+          .fail(function(err){
+            log.err(err);
+          });
+        }
+        else{
+          log.err('Sorry, some information are missing')
+        }
+      }
     }
   });
 
@@ -20,7 +40,7 @@ function pForm() {
 
 }
 
-vForm.prototype = {
+pForm.prototype = {
 
   /**
   */

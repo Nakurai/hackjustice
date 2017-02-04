@@ -2,13 +2,44 @@
 var mail = require('../../utils/mail').mail,
 User = require('../../models/user').user.getModel(),
 crypt = require('../../utils/crypt').crypt,
-nJwt = require('njwt');
+nJwt = require('njwt'),
+decisionTree = require('../../res/decision-tree.js');
 
 class PostUser{
 
     /**
     */
     constructor() {}
+
+    situation(userInfo){
+      return new Promise(
+      (resolve, reject)=>{
+
+        /**
+        the first two filters are:
+        the user's income. If they make more than the threshold amount,then they cannot pretend to this option
+        the user's marital status
+        */
+        var remainingOptions = decisionTree.filter((curr)=>{
+          var res = userInfo.income < curr.income && userInfo.maritalStatus === curr.maritalStatus;
+          // if the requirements are met, then res is reset and will be true again only if at least one of the issues match
+          if(res){
+            res = false;
+            for(var cpt=0, max=userInfo.issues.length; cpt<max; cpt++){
+              if(curr.issues.indexOf(userInfo.issues[cpt]) !== -1){
+                res = true;
+                cpt = max;
+              }
+            }
+          }
+          return res;
+        })
+        .map((curr)=>{return curr.option;});
+
+        resolve(remainingOptions);
+      });
+
+    }
 
 
     /**
