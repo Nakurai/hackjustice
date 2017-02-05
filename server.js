@@ -69,6 +69,10 @@ app.get('/options', function(req, res) {
   res.render('home', {route:'options'});
 });
 
+app.get('/lawyers', function(req, res) {
+  res.render('home', {route:'lawyers'});
+});
+
 /*****************************
  API
 *****************************/

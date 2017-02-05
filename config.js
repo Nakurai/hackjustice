@@ -5,9 +5,9 @@ module.exports = {
         name:'hackjustice'
     },
     mailsender:{
-      login:'cmamessier@gmail.com',
-      pwd:'JmalacclqjddplrdmJ',
-      email:'cmamessier@gmail.com',
-      name:'Amatart'
+      login:'test',
+      pwd:'test',
+      email:'test',
+      name:'test'
     }
 };

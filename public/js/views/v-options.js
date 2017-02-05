@@ -31,25 +31,21 @@ vOptions.prototype = {
           <div class="w3-margin-bottom">\
             <i class="fa fa-hand-o-right w3-margin-right"></i> {{option.description}}\
           </div>\
-          <div v-on:click="currentOptionDisplayed=option.code" class="link-like w3-text-theme" style="border-top: 1px solid #26364a;">\
-            See more information &darr;\
-          </div>\
-          <div v-if="currentOptionDisplayed === option.code" class="">\
-              <div class="w3-row">\
-                <div class="w3-col w3-half">\
-                 <p title="estimated cost"> <i class="fa fa-money w3-xlarge w3-margin-bottom w3-text-green" aria-hidden="true"> </i><br>\
-                 {{option.cost}} CAD\
-                 </p>\
-                </div>\
-                <div class="w3-col w3-half">\
-                <p title="estimated duration"> <i class="fa fa-calendar w3-large w3-margin-bottom" aria-hidden="true"> </i><br>\
-                  {{option.duration}}\
-                </p>\
-                </div>\
-              </div> <!-- end of the two half width icons-->\
-              <div>\
-                  tetset\
-              </div>\
+          <div class="w3-row">\
+            <div class="w3-col w3-half">\
+             <p title="estimated cost"> <i class="fa fa-money w3-xlarge w3-margin-bottom w3-text-green" aria-hidden="true"> </i><br>\
+             {{option.cost}} CAD\
+             </p>\
+            </div>\
+            <div class="w3-col w3-half">\
+            <p title="estimated duration"> <i class="fa fa-calendar w3-large w3-margin-bottom" aria-hidden="true"> </i><br>\
+              {{option.duration}}\
+            </p>\
+            </div>\
+          </div> <!-- end of the two half width icons-->\
+          <div class="w3-center">\
+            <a v-if="option.code === \'trial\' || option.code === \'agreement\'"  href="/lawyers" class="w3-btn w3-theme"> List of available lawyers </a>\
+            <a v-if="option.code === \'mediation\'"  href="/lawyers" class="w3-btn w3-theme"> List of available mediators </a>\
           </div>\
         </div>\
       </li>\

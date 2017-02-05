@@ -107,6 +107,9 @@ App.prototype = {
         case 'options':
             this.page = new pOptions(param);
             break;
+        case 'lawyers':
+            this.page = new pLawyers();
+            break;
         default:
             this.page = new pHome();
       }

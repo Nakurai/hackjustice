@@ -21,7 +21,10 @@ function vHome() {}
       return '<div class="w3-content w3-display-container">\
                 <div class="w3-center">\
                   <p class="w3-container w3-border w3-padding w3-round">\
-                    ioerjgoerj rpgojeùkgp elgj epglg pegrepgkĝ p jepùgojekgrrj eùg e\
+                  Understand your options with a personalized Dispute Resolution Portfolio <br><br>\
+                  Family matters can get messy and expensive – but…<br>\
+                  …they don’t have to. <br><br>\
+                  Fill out this questionnaire to learn more about your options. \
                   </p>\
                   <p class="w3-center">\
                     <a class="w3-btn w3-theme" href="/form"> BEGIN </a>\
